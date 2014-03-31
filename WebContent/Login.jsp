@@ -33,29 +33,54 @@ if(request.getParameter("userId") != null)
 		}
 		else
 		{
-	 		message = "Login Success";
+	 		//message = "Login Success";
 		 	session.setAttribute("primaryID",usr.getPrimaryKeyId()); 
 		 	session.setAttribute("role",usr.getRole());
+		 	response.sendRedirect("Home.jsp");
 		}
 	}
 }
 
 %>
-<%@include file="Header.jsp" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Team 6 OOSD - Travel Experts</title>
+</head>
+<body>
+<!-- top table  -->
+<table border="1" style="width:100%">
+	<tr>
+		<td>
+			<!-- header table  start -->
+			<table border="0" style="width:100%">
+				<tr>
+					<td><h1> Travel Experts - TEAM 6 - OOSD </h1></td>
+				</tr>
+			</table>
+			<!-- header table end -->
+		</td>
+	</tr>
+
  
 
 <tr>
 	<td style='height:405px;vertical-align:top'>
 	<form method='post'>
-		<h2 style='color:red'><%=message%> </h2>
-		<table border='1' style='width:100%'>
+		<h4 style='color:red'><%=message%> </h4>
+		<table border='1' style='width:60%'>
 		<tr><td>User Id</td>
 		<td><input type='text' name='userId'></td></tr>
 		<tr><td>Password</td>
 		<td><input type='text' name='password'></td></tr>
 		<tr>
 			<td colspan='2'><input type='submit' value='Login'> </td>
-		</tr>				
+		</tr>	
+		<tr>
+			<td><a href="Customer.jsp">Create Customer Login</a>
+			<td><a href="Agent.jsp">Create Agent Login</a>
+		</tr>			
 		</table>
 	</form>
 	</td>

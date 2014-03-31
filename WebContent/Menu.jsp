@@ -6,14 +6,26 @@
 		<table border="1" style="width:100%">
 			<tr>
 				<td>
-					<a href="Login.jsp">Home</a>
+					<a href="Home.jsp">Home</a>
 				</td>
 				<% 
-				if(session.getAttribute("userPrimaryID") != null)
+				if(session.getAttribute("role") != null)
 				{
-					out.print("<td>\n<a href='Customer'>Customer.jsp</a>\n</td>\n");
+					Integer roleId = (Integer)session.getAttribute("role");
+					if(roleId == 2) // customer
+					{
+						out.print("<td>\n<a href='Customer.jsp'>Customer</a>\n</td>\n");	
+					}
+					else if(roleId == 1)
+					{
+						out.print("<td>\n<a href='Agent.jsp'>Agent</a>\n</td>\n");
+					}
+					
 				}
 				%>
+				<td>
+					<a href="Logout.jsp">Logout</a>
+				</td>
 			</tr>
 		</table>
 	</td>
