@@ -6,7 +6,7 @@
 		<table border="1" style="width:100%">
 			<tr>
 				<td>
-					<a href="LoginJsp.jsp">Home</a>
+					<a href="Login.jsp">Home</a>
 				</td>
 				<% 
 				if(session.getAttribute("userPrimaryID") != null)
