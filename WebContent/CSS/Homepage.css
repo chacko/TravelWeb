@@ -1,0 +1,183 @@
+@CHARSET "UTF-8";
+
+	/* Code by: Mark Neil Del Rosario
+	Date: April 03, 2014
+	Project: Instructor: Harvey Peters
+	Group Member: 6
+	Deadline: April 17, 2014
+	Programming Language: Java,HTML,CSS,JavaScript,  	 */
+
+	body 
+	{
+	margin:0;
+    padding:0;
+    /*background-color:black;*/
+    background-size:cover;
+    font-family:Arial,Helvetica;
+	
+	}	
+
+
+	.Menuwrapper
+		  {
+			height:20%;
+			width:60%;
+			margin-right:40%;
+			margin-left:20%;
+			margin-top:1%;
+			
+		  }
+		  
+	table .regForm
+		 {
+			position:absolute;
+			margin-top:2%;
+			margin-left:8%;
+			border-collapse:separate; 
+			/* border-width:1px; */
+			/* color:#333333;	 */			
+		 }	  
+		 
+	 .regForm td
+		 {
+		 	position:relative;
+			/* border-width:1px; */
+			padding: 3px;
+			border-style:outset;	
+			border-color:grey;
+			background:#dcddc0 url('CSS/cell-grey.jpg');				
+		 }	  	 
+		 
+	th
+		{
+			background:#b5cfd2 url('CSS/cell-blue.jpg');
+		}
+		 
+		 	 		
+	.Content
+		 {
+			width:40%;
+			height:600px;
+			margin-left:30%;
+			margin-top:5.5%;
+			/* background-color:#f2f2f2;  */
+		 }
+		  	  
+	.logoLocation
+		  {
+			width:30%;
+			height:140px;	
+			margin-left:20%;
+			margin-top:3%;
+		  }
+		    	  
+		  
+	input
+		{
+			-webkit-border-radius: 15px;
+    		-moz-border-radius: 15px;
+   			 border-radius: 10px;
+			/* box-shadow:inset 2px 2px 5px #888; */
+			-moz-box-shadow:inset 2px 2px 5px #888;
+			 height:25px;
+		}	  
+		
+	/* input[type=text]
+	{
+		 color:black;
+		 font-family:arial;
+		 font-weight:bold;		
+	}	 */
+			  	  	  
+		 	
+	.Menu 
+		   {
+				width: 100%;
+				float: left;
+				margin: 0 0 3em 0;
+				padding: 0;
+				list-style: none; 
+				
+				width: 100%;
+				float: left;
+				margin: 0 0 3em 0;
+				padding: 0;
+				list-style: none;
+				background-color: #f2f2f2;
+				border-bottom: 1px solid #ccc; 
+				border-top: 1px solid #ccc; 
+				-webkit-border-radius: 5px;
+			}
+			
+								
+	.Menu li 
+		     {
+		
+				float: left; 
+				-webkit-border-radius: 5px;
+			 }
+				
+						
+	.Menu li a 
+		    {
+				display: block;
+				padding: 8px 15px;
+				text-decoration: none;
+				font-weight: bold;
+				color: #069;
+				border-right: 1px solid #ccc; 			
+			}
+				
+	.Menu li a:hover , a:active
+			{
+				color: aqua;
+				transition:.70s;
+				text-shadow:3px -3px 3px #000;
+				
+				/* Background Gradient */
+				background-image: -moz-linear-gradient(top, #929292, #545454);
+				background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#929292), to(#545454));
+			}
+			
+			
+		div ul {  
+				padding: 0;  
+				margin: 0 auto;  
+				width: 600px;  
+				height: 40px;  
+			   }  
+			   
+			   
+		div li {  
+				display: inline;  
+				float: left;  
+				}  
+				
+				
+				
+		.Footer
+				  {
+				    width:60%;
+					height:40px;
+					float:left;
+					border-radius: 5px;
+					-moz-border-radius: 5px;
+					-webkit-border-radius: 5px;
+					background-color:#f2f2f2;
+					margin-top:4%;
+					margin-left:20%;
+				  }
+				  
+		  .Footer p
+				  {
+				     width:92%;
+					 margin:1% auto;
+					 color:black;
+				  }		
+			
+	
+			
+		
+				
+				
+				

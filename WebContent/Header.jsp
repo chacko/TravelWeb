@@ -4,22 +4,18 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Team 6 OOSD - Travel Experts</title>
-</head>
-<body>
-<!-- top table  -->
-<table border="1" style="width:100%">
-	<tr>
-		<td>
-			<!-- header table  start -->
-			<table border="0" style="width:100%">
-				<tr>
-					<td><h1> Travel Experts - TEAM 6 - OOSD </h1></td>
-				</tr>
-				<!-- Menus items -->
-				<%@include file="Menu.jsp" %>
-			</table>
-			<!-- header table end -->
-		</td>
-	</tr>
 
+<link href="CSS/Homepage.css" rel="stylesheet" type="text/css">
+<!--  <link href="CSS/LoginPage.css" rel="stylesheet" type="text/css">-->
+
+
+<title>Welcome To Travel Experts</title>			
+</head>
+<body background="Images/bg2.jpg">
+
+	<div class="logoLocation">
+		<img src="Images/logo2.png" >
+	</div>	
+	
+	<%@include file="Menu.jsp" %>
+	

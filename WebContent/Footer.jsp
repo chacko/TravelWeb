@@ -3,19 +3,9 @@
 
 
 	<!-- footer table start  -->
-	<tr>
-		<td>
-			<table border="0" style="width:100%">
-				<tr>
-					<td>
-						&copy; SAIT - OOSD - TEAM 6
-					</td>
-				</tr>
-			</table>
-		</td>
-	</tr>
-	<!-- footer table end  -->
-</table>
-<!-- Main table end  -->
-</body>
+	<div class="Footer">
+				<p>Copyright &copy; Travel Experts Team 6 OOSD 2014</p>
+		</div>
+		
+</body>	
 </html>

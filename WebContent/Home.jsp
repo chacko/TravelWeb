@@ -15,17 +15,8 @@
 <%@include file="Header.jsp" %>
  
 
-<tr>
-	<td style='height:405px;vertical-align:top'>
-	<form method='post'>
-		<table border='1' style='width:100%'>
-		<tr>
-			<td>HOME PAGE</td>
-		</tr>	
-		</table>
-	</form>
-	</td>
-</tr>
-
+<div>
+<h1>Home Page</h1>
+</div>
 
 <%@include file="Footer.jsp" %>

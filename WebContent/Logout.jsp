@@ -3,5 +3,5 @@
 <%
 	session.removeAttribute("primaryID"); 
 	session.removeAttribute("role");
-	response.sendRedirect("Login.jsp");
+	response.sendRedirect("HomePage.jsp");
 %>
