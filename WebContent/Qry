@@ -1,0 +1,4 @@
+SELECT distinct p.PackageId, p.PkgName
+FROM Bookings b, Packages p
+WHERE b.PackageId = p.PackageId
+AND b.CustomerId =143

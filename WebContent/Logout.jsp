@@ -3,5 +3,7 @@
 <%
 	session.removeAttribute("primaryID"); 
 	session.removeAttribute("role");
+	session.removeAttribute("usr");
+	
 	response.sendRedirect("HomePage.jsp");
 %>

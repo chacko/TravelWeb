@@ -9,7 +9,17 @@
 <!--  <link href="CSS/LoginPage.css" rel="stylesheet" type="text/css">-->
 
 
-<title>Welcome To Travel Experts</title>			
+<title>Welcome To Travel Experts</title>
+<script type="text/javascript" src="jquery.js"></script>	
+<script type="text/javascript" src="JSValidation/Validation.js"></script>
+
+<script type="text/javascript">
+
+function showCustomer(custId)
+{
+	$( "#custTD" ).load( "GetCustomer?Cust=" + custId);
+}
+</script>		
 </head>
 <body background="Images/bg2.jpg">
 

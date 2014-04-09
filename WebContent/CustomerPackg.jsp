@@ -7,7 +7,7 @@
 <% 
 if(session.getAttribute("primaryID") == null)
 {
-	response.sendRedirect("Login.jsp");
+	response.sendRedirect("HomePage.jsp");
 }
 %>
     
@@ -27,20 +27,20 @@ if(session.getAttribute("primaryID") == null)
 	}
 %>
  
-
+<div class="Content">
+<table border="1" class="regForm">
 <tr>
 	<td style='height:405px;vertical-align:top'>
 	<form method='post'>
-		<table border='1' style='width:100%'>
+		<table border='0' style='width:100%'>
 		<tr>
-			<td>
-				<select name='Cust' id='Cust'>
+			<td valign="top">
+				<select name='Cust' id='Cust' onchange='showCustomer(this.value)'>
 					<option value="0">Select Customer</option>
 					<%=optStr.toString() %>
 				</select>
 			</td>
-		</tr>	
-		<tr>
+			<!-- Customer details TD -->		
 			<td id="custTD">
 			
 			</td>
@@ -49,6 +49,6 @@ if(session.getAttribute("primaryID") == null)
 	</form>
 	</td>
 </tr>
-
-
+</table>
+</div>
 <%@include file="Footer.jsp" %>

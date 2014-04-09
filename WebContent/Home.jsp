@@ -15,8 +15,8 @@
 <%@include file="Header.jsp" %>
  
 
-<div>
-<h1>Home Page</h1>
+<div class="Content">
+<h1>TEAM 6 - OOSD - SAIT</h1>
 </div>
 
 <%@include file="Footer.jsp" %>

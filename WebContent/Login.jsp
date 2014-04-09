@@ -1,3 +1,6 @@
+<%@page import="TrvlUtil.MD5"%>
+<%@page import="TrvlEntity.Customers"%>
+<%@page import="TrvlDBase.CustomerDB"%>
 <%@page import="TrvlDBase.UsersDB"%>
 <%@page import="TrvlEntity.Users"%>
 <%@page import="TrvlDBase.DBase"%>
@@ -26,8 +29,13 @@ if(request.getParameter("userId") != null)
 	}
 	else
 	{
-		Users usr = UsersDB.getUser(frmUserId, frmPasswd);
-		if(!frmPasswd.equals(usr.getPasswd()))
+		// Encrypting password
+    	String encryptPasswd = MD5.getMD5(frmPasswd);
+    	
+		Users usr = UsersDB.getUser(frmUserId, encryptPasswd);
+    	
+		//if(!frmPasswd.equals(usr.getPasswd()))
+		if(!encryptPasswd.equals(usr.getPasswd()))	
 		{
 			message = "UserId or Password are incorrect";
 		}
@@ -36,6 +44,10 @@ if(request.getParameter("userId") != null)
 	 		//message = "Login Success";
 		 	session.setAttribute("primaryID",usr.getPrimaryKeyId()); 
 		 	session.setAttribute("role",usr.getRole());
+		 	
+		 	Customers cust = CustomerDB.getCustomer(usr.getPrimaryKeyId());
+		 	session.setAttribute("usr",cust.getCustomerFirstName() + " " + cust.getCustomerLastName());
+		 	
 		 	response.sendRedirect("Home.jsp");
 		}
 	}

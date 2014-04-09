@@ -12,7 +12,9 @@
  */
 	function validateForm()
 		{
+		
 			var x= document.forms["myForm"]["CustFirstName"].value.trim();
+			//alert(x);
 			document.forms["myForm"]["CustFirstName"].value = x;
 			if(x == null || x == "")
 			{

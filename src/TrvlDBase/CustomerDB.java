@@ -52,16 +52,16 @@ public class CustomerDB {
 		return null; 
 	}
 	//---------------------------------------------
-	public static Vector<Customers> getCustomer(Integer custId){
+	public static Customers getCustomer(Integer custId){
 		try {
-			Vector<Customers> customer = new Vector<Customers>();
+			Customers cust = new Customers();
 			
 			Connection conn = DBase.getMySqlConnection();
 			
 			StringBuilder qry = new StringBuilder();
 			qry.append("SELECT CustomerId, CustFirstName, CustLastName ");
 			qry.append(",CustAddress,CustCity,CustProv,CustPostal,CustBusPhone");
-			qry.append(",CustEmail FROM Customers ");
+			qry.append(",CustEmail,CustCountry,CustHomePhone FROM Customers ");
 			qry.append(" WHERE  customerId =?");
 			
 			PreparedStatement  stmt = conn.prepareStatement(qry.toString());
@@ -70,7 +70,7 @@ public class CustomerDB {
 			ResultSet rs = stmt.executeQuery();
 			
 			while(rs.next()){
-				Customers cust = new Customers();
+				
 				cust.setCustomerID(Integer.valueOf(rs.getString("customerId")));
 				cust.setCustomerFirstName(rs.getString("custFirstName"));
 				cust.setCustomerLastName(rs.getString("custLastName"));
@@ -78,13 +78,14 @@ public class CustomerDB {
 				cust.setCustomerCity(rs.getString("CustCity"));
 				cust.setCustomerProv(rs.getString("CustProv"));
 				cust.setCustomerPostal(rs.getString("CustPostal"));
-				
-				customer.add(cust);
-				cust = null;
+				cust.setCustomerEmail(rs.getString("CustEmail"));
+				cust.setCustomerPhone(rs.getString("CustBusPhone"));
+				cust.setCustomerCountry(rs.getString("CustCountry"));
+				cust.setCustomerHPhone(rs.getString("CustHomePhone"));
 			}
 			
 			DBase.closeDBase(conn, rs, stmt);
-			return customer;
+			return cust;
 			
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
