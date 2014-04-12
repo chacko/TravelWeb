@@ -18,6 +18,9 @@
 function showCustomer(custId)
 {
 	$( "#custTD" ).load( "GetCustomer?Cust=" + custId);
+	
+	//
+	$( "#BkgTD" ).load( "GetBookings?custId=" + custId);
 }
 </script>		
 </head>

@@ -2,3 +2,16 @@ SELECT distinct p.PackageId, p.PkgName
 FROM Bookings b, Packages p
 WHERE b.PackageId = p.PackageId
 AND b.CustomerId =143
+
+
+SELECT BookingId, DATE_FORMAT( BookingDate, '%d-%b-%Y' ) BkgDate, BookingNo
+FROM Bookings
+WHERE CustomerId =104
+ORDER BY BkgDate DESC
+
+SELECT b.TravelerCount, t.TTName, p.PkgName, p.PkgStartDate, p.PkgEndDate,
+ p.PkgDesc, p.PkgBasePrice
+ FROM Bookings b, TripTypes t, Packages p
+ WHERE b.TripTypeId = t.TripTypeId
+  AND b.PackageId = p.PackageId
+  AND b.BookingId = 172 

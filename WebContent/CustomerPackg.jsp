@@ -41,7 +41,15 @@ if(session.getAttribute("primaryID") == null)
 				</select>
 			</td>
 			<!-- Customer details TD -->		
-			<td id="custTD">
+			<td id="custTD" valign="top">
+			
+			</td>
+			<!-- booking drop down list TD -->
+			<td id="BkgTD" valign="top">
+			
+			</td>
+			<!-- booking Details TD -->
+			<td id="BkgDtlsTD" valign="top">
 			
 			</td>
 		</tr>
