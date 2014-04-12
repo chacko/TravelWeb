@@ -78,7 +78,7 @@ public class BookingDB
 			ResultSet rs = stmt.executeQuery();
 			
 			while(rs.next()){
-				bkg.setTrvlCount(rs.getDouble("TravelerCount"));
+				bkg.setTrvlCount((int)rs.getDouble("TravelerCount"));
 				bkg.setTrip(rs.getString("TTName"));
 				bkg.setPackage(rs.getString("PkgName"));
 				bkg.setPkgStartDt(rs.getDate("PkgStartDate"));

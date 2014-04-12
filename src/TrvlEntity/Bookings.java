@@ -9,7 +9,7 @@ public class Bookings
 	private Date  BkgDate;
 	private String BkgNumber;
 	
-	private Double 	TrvlCount;
+	private Integer 	TrvlCount;
 	private String 	Trip;
 	private String 	Package;
 	private Date	PkgStartDt;
@@ -54,10 +54,10 @@ public class Bookings
 	public void setBkgNumber(String bkgNumber) {
 		BkgNumber = bkgNumber;
 	}
-	public Double getTrvlCount() {
+	public Integer getTrvlCount() {
 		return TrvlCount;
 	}
-	public void setTrvlCount(Double trvlCount) {
+	public void setTrvlCount(Integer trvlCount) {
 		TrvlCount = trvlCount;
 	}
 	public String getTrip() {

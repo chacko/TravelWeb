@@ -32,7 +32,7 @@ if(session.getAttribute("primaryID") == null)
 <tr>
 	<td style='height:405px;vertical-align:top'>
 	<form method='post'>
-		<table border='0' style='width:100%'>
+		<table border='0' style='width:900px'>
 		<tr>
 			<td valign="top">
 				<select name='Cust' id='Cust' onchange='showCustomer(this.value)'>

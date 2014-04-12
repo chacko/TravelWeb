@@ -60,7 +60,7 @@ public class GetBookings extends HttpServlet {
 			//System.out.println(bookgs.size());
 			PrintWriter out = response.getWriter();
 			
-			out.print("<select name='selBkgs'>");
+			out.print("<select name='selBkgs' onchange='showBookingDetls(this.value)'>");
 			out.print("<option value='0'>Select Booking</option>\n");
 			
 			SimpleDateFormat dtFormat = new SimpleDateFormat("dd-MMM-yyyy");
