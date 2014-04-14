@@ -20,18 +20,15 @@ if(session.getAttribute("primaryID") == null)
 
 <%@include file="Header.jsp" %>
  
-
+<div class="Content">
+<form method='post'>
+<table border="1" style="width:100%" class="regForm">
 <tr>
 	<td style='height:405px;vertical-align:top'>
-	<form method='post'>
-		<table border='1' style='width:100%'>
-		<tr>
-			<td>Agent PAGE</td>
-		</tr>	
-		</table>
-	</form>
+		Agent PAGE
 	</td>
 </tr>
-
-
+</table>
+</form>
+</div>
 <%@include file="Footer.jsp" %>

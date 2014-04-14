@@ -1,3 +1,5 @@
+<%@page import="TrvlDBase.AgentsDB"%>
+<%@page import="TrvlEntity.Agents"%>
 <%@page import="TrvlUtil.MD5"%>
 <%@page import="TrvlEntity.Customers"%>
 <%@page import="TrvlDBase.CustomerDB"%>
@@ -38,6 +40,7 @@ if(request.getParameter("userId") != null)
 		if(!encryptPasswd.equals(usr.getPasswd()))	
 		{
 			message = "UserId or Password are incorrect";
+			//response.sendRedirect("HomePage.jsp");
 		}
 		else
 		{
@@ -45,58 +48,43 @@ if(request.getParameter("userId") != null)
 		 	session.setAttribute("primaryID",usr.getPrimaryKeyId()); 
 		 	session.setAttribute("role",usr.getRole());
 		 	
-		 	Customers cust = CustomerDB.getCustomer(usr.getPrimaryKeyId());
-		 	session.setAttribute("usr",cust.getCustomerFirstName() + " " + cust.getCustomerLastName());
-		 	
+		 	if(usr.getRole().equals(1)) // agent
+		 	{
+		 		Agents agt = AgentsDB.getAgent(usr.getPrimaryKeyId());
+		 		session.setAttribute("usr", agt.getAgentFName() + " " + agt.getAgentLName());
+		 	}
+		 	else // customer
+		 	{
+	 			Customers cust = CustomerDB.getCustomer(usr.getPrimaryKeyId());
+		 		session.setAttribute("usr",cust.getCustomerFirstName() + " " + cust.getCustomerLastName());
+		 	}
 		 	response.sendRedirect("Home.jsp");
 		}
 	}
 }
 
 %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Team 6 OOSD - Travel Experts</title>
-</head>
-<body>
-<!-- top table  -->
-<table border="1" style="width:100%">
-	<tr>
-		<td>
-			<!-- header table  start -->
-			<table border="0" style="width:100%">
-				<tr>
-					<td><h1> Travel Experts - TEAM 6 - OOSD </h1></td>
-				</tr>
-			</table>
-			<!-- header table end -->
-		</td>
-	</tr>
 
- 
+<%@include file="Header.jsp" %>
 
-<tr>
-	<td style='height:405px;vertical-align:top'>
-	<form method='post'>
-		<h4 style='color:red'><%=message%> </h4>
-		<table border='1' style='width:60%'>
-		<tr><td>User Id</td>
-		<td><input type='text' name='userId'></td></tr>
-		<tr><td>Password</td>
-		<td><input type='text' name='password'></td></tr>
-		<tr>
-			<td colspan='2'><input type='submit' value='Login'> </td>
-		</tr>	
-		<tr>
-			<td><a href="Customer.jsp">Create Customer Login</a>
-			<td><a href="Agent.jsp">Create Agent Login</a>
-		</tr>			
-		</table>
-	</form>
-	</td>
-</tr>
 
+
+<div class="Content">
+	<div class="login">
+		<h1>Login Here</h1>
+		<form method='post' action='Login.jsp'>
+			<h3 style='color:blue'><%=message %></h3>
+			<p><input type="text" name="userId" value="" placeholder="UserId"></p>
+	   				<p><input type="password" name="password" value="" placeholder="Password"></p>
+			 <!-- <p class="remember_me">
+			 <label>	
+	      			 <input type="checkbox" name="remember_me" id="remember_me">
+	      			 Remember me on this computer
+	     			</label>
+	 			  </p> -->
+	    				<p class="submit"><input type="submit" name="commit" value="Login"></p>
+			</form>	
+		</div>
+	</div>
 
 <%@include file="Footer.jsp" %>

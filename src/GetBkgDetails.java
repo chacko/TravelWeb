@@ -48,35 +48,43 @@ public class GetBkgDetails extends HttpServlet {
 	private void doProcess(HttpServletRequest request,
 			HttpServletResponse response) throws IOException 
 	{ 
+		PrintWriter out = response.getWriter();
+		
 		String bookgId = request.getParameter("bookgId");
 		
 		if(!bookgId.isEmpty())
 		{
-			Bookings bkg = BookingDB.getBookingDetls(Integer.valueOf(bookgId));
+			if(bookgId.equals("0"))
+			{
+				out.print("<table border='0'>\n");
+				out.print("<tr><td>&nbsp;</td></tr></table>");
+			}
+			else
+			{
+				Bookings bkg = BookingDB.getBookingDetls(Integer.valueOf(bookgId));
 			
-			PrintWriter out = response.getWriter();
+				SimpleDateFormat dtFormat = new SimpleDateFormat("dd-MMM-yyyy");
+				
+				out.print("<table border='0' style='width:100%'>\n");
+				out.print("<tr><td>Traveler Count:	</td>");
+				out.print("<td>" + bkg.getTrvlCount() + "</td></tr>\n");
+				out.print("<tr><td>Trip:	</td>");
+				out.print("<td>" + bkg.getTrip() + "</td></tr>\n");
+				out.print("<tr><td>Package:	</td>");
+				out.print("<td>" + bkg.getPackage() + "</td></tr>\n");
+				out.print("<tr><td>Start:	</td>");
+				out.print("<td>" + dtFormat.format(bkg.getPkgStartDt()) + "</td></tr>\n");
+				out.print("<tr><td>End:	</td>");
+				out.print("<td>" + dtFormat.format(bkg.getPkgEndDt()) + "</td></tr>\n");
+				out.print("<tr><td>Info:	</td>");
+				out.print("<td>" + bkg.getPkgDesc() + "</td></tr>\n");
+				out.print("<tr><td>Price:	</td>");
 			
-			SimpleDateFormat dtFormat = new SimpleDateFormat("dd-MMM-yyyy");
-			
-			out.print("<table border='0' style='width:100%'>\n");
-			out.print("<tr><td>Traveler Count:	</td>");
-			out.print("<td>" + bkg.getTrvlCount() + "</td></tr>\n");
-			out.print("<tr><td>Trip:	</td>");
-			out.print("<td>" + bkg.getTrip() + "</td></tr>\n");
-			out.print("<tr><td>Package:	</td>");
-			out.print("<td>" + bkg.getPackage() + "</td></tr>\n");
-			out.print("<tr><td>Start:	</td>");
-			out.print("<td>" + dtFormat.format(bkg.getPkgStartDt()) + "</td></tr>\n");
-			out.print("<tr><td>End:	</td>");
-			out.print("<td>" + dtFormat.format(bkg.getPkgEndDt()) + "</td></tr>\n");
-			out.print("<tr><td>Info:	</td>");
-			out.print("<td>" + bkg.getPkgDesc() + "</td></tr>\n");
-			out.print("<tr><td>Price:	</td>");
-			
-			NumberFormat formatter = NumberFormat.getCurrencyInstance();
-			out.print("<td>" + formatter.format(bkg.getPkgPrice()) + "</td></tr>\n");
-
-			out.print("</table>\n");	
+				NumberFormat formatter = NumberFormat.getCurrencyInstance();
+				out.print("<td>" + formatter.format(bkg.getPkgPrice()) + "</td></tr>\n");
+	
+				out.print("</table>\n");
+			}
 		}
 		
 	}

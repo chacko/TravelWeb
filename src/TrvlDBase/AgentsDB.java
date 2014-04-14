@@ -49,7 +49,7 @@ public class AgentsDB
 			StringBuilder qry = new StringBuilder();
 			qry.append("select agentid,agtfirstname,agtmiddleinitial,agtlastname ");
 			qry.append(",agtbusphone,agtemail,agtposition,agencyid ");
-			qry.append(" from agents where agentid=?");
+			qry.append(" from Agents where agentid=?");
 			//qry.append(agentId);
 			
 			PreparedStatement stmt = conn.prepareStatement(qry.toString());

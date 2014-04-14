@@ -72,14 +72,14 @@ if(request.getParameter("userId") != null)
 		<ul class="Menu">
 			<!--  <li><a href="HomePage.jsp">Customer Login</a></li>-->
 			<li><a href="Register.jsp">New Customer Registration</a></li>
-			<!-- <li><a href="Agent.jsp">Agent Login</a></li>-->
+			<li><a href="Login.jsp">Login</a></li>
 					
 		</ul>
 	</div>
 		
 	
 			
-		<div class="container">
+		<%-- <div class="container">
 			<div class="login">
 				<h1>Login Here</h1>
 				<form method='post' action='Login.jsp'>
@@ -95,8 +95,19 @@ if(request.getParameter("userId") != null)
       				<p class="submit"><input type="submit" name="commit" value="Login"></p>
 				</form>	
 			</div>
-		</div>
-			
+		</div> --%>
+
+<div class="Content">
+<h1>Home page</h1>
+<!-- <table border="1" >
+	<tr>
+		<td><img alt="" src="Images/Bora.jpg"> </td>
+		<td><img alt="" src="Images/GreatWall.jpg"> </td>
+		<td><img alt="" src="Images/LasVegas.jpg"></td>
+	</tr>
+</table> -->
+
+</div>	
 		<div class="Footer">
 				<p>Copyright &copy; Travel Experts Team 6 2013</p>
 		</div>

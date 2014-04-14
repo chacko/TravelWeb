@@ -21,12 +21,21 @@ function showCustomer(custId)
 	
 	//
 	$( "#BkgTD" ).load( "GetBookings?custId=" + custId);
+	
+	//to claen booking details TD
+	$( "#BkgDtlsTD" ).load( "GetBkgDetails?bookgId=0");
 }
 //------------------------------
 function showBookingDetls(bkgId)
 {
 	$( "#BkgDtlsTD" ).load( "GetBkgDetails?bookgId=" + bkgId);
 }
+//------------------------------
+function showBookings(bkgId)
+{
+	
+}
+//------------------------------
 </script>		
 </head>
 <body background="Images/bg2.jpg">

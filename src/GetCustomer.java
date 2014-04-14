@@ -47,32 +47,42 @@ public class GetCustomer extends HttpServlet {
 	private void doProcess(HttpServletRequest request,
 			HttpServletResponse response) throws IOException 
 	{ 
+		PrintWriter out = response.getWriter();
+		
 		String custId = request.getParameter("Cust");
 		
 		if(!custId.isEmpty())
 		{
-			Customers cust = CustomerDB.getCustomer(Integer.valueOf(custId));
+			if(custId.equals("0"))
+			{
+				out.print("<table border='0'>\n");
+				out.print("<tr><td>&nbsp;</td></tr></table>");
+			}
+			else
+			{
+				Customers cust = CustomerDB.getCustomer(Integer.valueOf(custId));
 			
-			PrintWriter out = response.getWriter();
+				
 			
-			out.print("<table border='0'>\n");
-			out.print("<tr><td>First Name:</td>");
-			out.print("<td>" + cust.getCustomerFirstName() + "</td></tr>\n");
-			out.print("<tr><td>Last Name:</td>");
-			out.print("<td>" + cust.getCustomerLastName() + "</td></tr>\n");
-			out.print("<tr><td>Address:</td>");
-			out.print("<td>" + cust.getCustomerAdrs() + "</td></tr>\n");
-			out.print("<tr><td>City:</td>");
-			out.print("<td>" + cust.getCustomerCity() + "</td></tr>\n");
-			out.print("<tr><td>Province:</td>");
-			out.print("<td>" + cust.getCustomerProv() + "</td></tr>\n");
-			out.print("<tr><td>Postal Code:</td>");
-			out.print("<td>" + cust.getCustomerPostal() + "</td></tr>\n");
-			out.print("<tr><td>Phone:</td>");
-			out.print("<td>" + cust.getCustomerPhone() + "</td></tr>\n");
-			out.print("<tr><td>Email:</td>");
-			out.print("<td>" + cust.getCustomerEmail() + "</td></tr>\n");
-			out.print("</table>\n");	
+				out.print("<table border='0'>\n");
+				out.print("<tr><td>First Name:</td>");
+				out.print("<td>" + cust.getCustomerFirstName() + "</td></tr>\n");
+				out.print("<tr><td>Last Name:</td>");
+				out.print("<td>" + cust.getCustomerLastName() + "</td></tr>\n");
+				out.print("<tr><td>Address:</td>");
+				out.print("<td>" + cust.getCustomerAdrs() + "</td></tr>\n");
+				out.print("<tr><td>City:</td>");
+				out.print("<td>" + cust.getCustomerCity() + "</td></tr>\n");
+				out.print("<tr><td>Province:</td>");
+				out.print("<td>" + cust.getCustomerProv() + "</td></tr>\n");
+				out.print("<tr><td>Postal Code:</td>");
+				out.print("<td>" + cust.getCustomerPostal() + "</td></tr>\n");
+				out.print("<tr><td>Phone:</td>");
+				out.print("<td>" + cust.getCustomerPhone() + "</td></tr>\n");
+				out.print("<tr><td>Email:</td>");
+				out.print("<td>" + cust.getCustomerEmail() + "</td></tr>\n");
+				out.print("</table>\n");
+			}
 		}
 		
 	}

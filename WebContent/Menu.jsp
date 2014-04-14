@@ -15,6 +15,7 @@
 			if(roleId == 2) // customer
 			{
 				out.print("<li><a href='Register.jsp'>Customer</a></li>\n");
+				out.print("<li><a href='CustomerInfo.jsp'>Travel Information</a></li>\n");
 				out.print("<li><a href='Logout.jsp'>Logout</a></li>\n");
 				
 			}
@@ -27,7 +28,7 @@
 			
 			if(session.getAttribute("usr") != null)
 			{
-				out.print("<li style='color:red'> 	<b>Hi " + session.getAttribute("usr") + "</b></li>\n");
+				out.print("<li style='color:red'> 	<b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Welcome..!!&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + session.getAttribute("usr") + "</b></li>\n");
 			}
 			
 		}
