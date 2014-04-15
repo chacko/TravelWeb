@@ -5,7 +5,7 @@
 <div class="Menuwrapper">
 	<ul class="Menu">
 		
-		<li><a href='HomePage.jsp'>Home</a></li>
+		
 		<% 
 		if(session.getAttribute("role") != null)
 		{
@@ -31,6 +31,10 @@
 				out.print("<li style='color:red'> 	<b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Welcome..!!&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + session.getAttribute("usr") + "</b></li>\n");
 			}
 			
+		}
+		else
+		{
+			out.print("<li><a href='HomePage.jsp'>Home</a></li>");
 		}
 		%>
 				

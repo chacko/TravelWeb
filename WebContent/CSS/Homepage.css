@@ -9,12 +9,11 @@
 
 	body 
 	{
-	margin:0;
-    padding:0;
-    /*background-color:black;*/
-    background-size:cover;
-    font-family:Arial,Helvetica;
-	
+		margin:0;
+	    padding:0;
+	    /*background-color:black;*/
+	    background-size:cover;
+	    font-family:Arial,Helvetica;	
 	}	
 
 
@@ -46,8 +45,7 @@
 			border-style:outset;	
 			border-color:grey;
 			background:#dcddc0 url('CSS/cell-grey.jpg');				
-		 }	  	 
-		 
+		 }			 	  	 		 
 	th
 		{
 			background:#b5cfd2 url('CSS/cell-blue.jpg');
@@ -62,7 +60,57 @@
 			margin-top:5.5%;
 			/* background-color:#f2f2f2;  */
 		 }
-		  	  
+		 
+		 	
+	.image1
+		{
+			margin-left:-20%;			
+		}	
+		
+	.image2
+		{
+			margin-left:75%;	
+			margin-top:-34%;	
+		}
+		
+	.travdescription
+		{
+			width:250px; 
+			margin-left:30%;
+			margin-top:-3%;
+			font-size:20px;		
+		}	
+	.slogan a:hover
+		{
+			background-color:grey;
+			color:white;
+			transition:.30s;
+		}		
+		
+	.image3
+		{
+			margin-top:-15%;
+			margin-left:-20%;		
+		}	
+		
+	.image4
+		{
+			margin-left:75%;	
+			margin-top:-34%;		
+		}		
+		
+		
+		
+			 
+		 
+	.desc
+		{
+			color:black;
+			font-style:arial;
+			font-weight:bold;
+		
+		}	 
+			  	  
 	.logoLocation
 		  {
 			width:30%;
@@ -81,15 +129,7 @@
 			-moz-box-shadow:inset 2px 2px 5px #888;
 			 height:25px;
 		}	  
-		
-	/* input[type=text]
-	{
-		 color:black;
-		 font-family:arial;
-		 font-weight:bold;		
-	}	 */
-			  	  	  
-		 	
+					  	  	  		 	
 	.Menu 
 		   {
 				width: 100%;

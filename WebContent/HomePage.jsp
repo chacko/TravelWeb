@@ -1,8 +1,8 @@
 
-	<!--Code by: Mark Neil Del Rosario
+	<!--Code Collaborators: Mark Neil Del Rosario & George Chacko
 	Date: April 03, 2014
 	Project: Instructor: Harvey Peters
-	Group Member: 6
+	Team Member: 6
 	Deadline: April 17, 2014
 	Programming Language: Java,HTML,CSS,JavaScript,  -->
 
@@ -50,11 +50,12 @@ if(request.getParameter("userId") != null)
 
 %>   
 
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<!-- Connection link to every CSS that we have used to design our pages. -->
 
 <link href="CSS/Homepage.css" rel="stylesheet" type="text/css">
 <link href="CSS/LoginPage.css" rel="stylesheet" type="text/css">
@@ -62,11 +63,18 @@ if(request.getParameter("userId") != null)
 
 <title>Welcome To Travel Experts</title>			
 </head>
-<body background="Images/bg2.jpg">
+
+	<!-- This is the background for every page that you will see. -->
+	
+<body background="Images/travel.jpg">
+
+	<!-- This is the logo of our company. -->
 
 	<div class="logoLocation">
 		<img src="Images/logo2.png" >
 	</div>	
+	
+	<!-- This is the navigation menu of the welcome page -->
 
 	<div class="Menuwrapper">
 		<ul class="Menu">
@@ -75,39 +83,37 @@ if(request.getParameter("userId") != null)
 			<li><a href="Login.jsp">Login</a></li>
 					
 		</ul>
-	</div>
-		
+	</div>	
 	
-			
-		<%-- <div class="container">
-			<div class="login">
-				<h1>Login Here</h1>
-				<form method='post' action='Login.jsp'>
-					<h3 style='color:blue'><%=message %></h3>
-					<p><input type="text" name="userId" value="" placeholder="UserId"></p>
-      				<p><input type="password" name="password" value="" placeholder="Password"></p>
-					 <!-- <p class="remember_me">
-					 <label>	
-         			 <input type="checkbox" name="remember_me" id="remember_me">
-         			 Remember me on this computer
-        			</label>
-    			  </p> -->
-      				<p class="submit"><input type="submit" name="commit" value="Login"></p>
-				</form>	
-			</div>
-		</div> --%>
-
+		<!-- These is the travel experts welcome page, where it includes various of famous
+				travel destination pictures and the vision of what we bring to you. -->					
+		
 <div class="Content">
-<h1>Home page</h1>
-<!-- <table border="1" >
-	<tr>
-		<td><img alt="" src="Images/Bora.jpg"> </td>
-		<td><img alt="" src="Images/GreatWall.jpg"> </td>
-		<td><img alt="" src="Images/LasVegas.jpg"></td>
-	</tr>
-</table> -->
+	<div class="image1">
+		<img src="Images/Bora.jpg" width="300px">	
+	</div>
+	<div class="image2">
+		<img src="Images/LasVegas.jpg" width="300px" height="221px">	
+	</div>
+	
+	<div class="travdescription">
+			<p class="slogan"><a>Explore thousands of beautiful and famous travel destinations, 
+				with us, we make sure that you enjoy every single bit of time
+				that you spend and complement it with a big SMILE.</a></p>
+	</div>
+	
+	<div class="image3">
+		<img src="Images/New York.jpg" width="300px" height="221px">	
+	</div>
+	
+	<div class="image4">
+		<img src="Images/Palawan.jpg" width="300px" height="221px">	
+	</div>
 
 </div>	
+	
+		<!-- This is the main Footer for every page -->
+
 		<div class="Footer">
 				<p>Copyright &copy; Travel Experts Team 6 2013</p>
 		</div>

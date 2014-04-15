@@ -1,3 +1,12 @@
+
+	<!--Code Collaborators: Mark Neil Del Rosario & George Chacko
+	Date: April 03, 2014
+	Project: Instructor: Harvey Peters
+	Team Member: 6
+	Deadline: April 17, 2014
+	Programming Language: Java,HTML,CSS,JavaScript,  -->
+
+
 <%@page import="TrvlDBase.AgentsDB"%>
 <%@page import="TrvlEntity.Agents"%>
 <%@page import="TrvlUtil.MD5"%>
@@ -64,18 +73,15 @@ if(request.getParameter("userId") != null)
 }
 
 %>
-
 <%@include file="Header.jsp" %>
-
-
-
-<div class="Content">
+<link href="CSS/LoginPage.css" rel="stylesheet" type="text/css">
+<div class="container">
 	<div class="login">
 		<h1>Login Here</h1>
 		<form method='post' action='Login.jsp'>
 			<h3 style='color:blue'><%=message %></h3>
-			<p><input type="text" name="userId" value="" placeholder="UserId"></p>
-	   				<p><input type="password" name="password" value="" placeholder="Password"></p>
+			<p><input type="text" class="uname" name="userId" value="" placeholder="UserId"></p>
+	   				<p><input type="password" class="pwd" name="password" value="" placeholder="Password"></p>
 			 <!-- <p class="remember_me">
 			 <label>	
 	      			 <input type="checkbox" name="remember_me" id="remember_me">

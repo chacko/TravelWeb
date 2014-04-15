@@ -206,37 +206,7 @@ public  void  doUpdate(HttpServletRequest request,
     	
     	int i = stmt.executeUpdate(qry.toString());
     	
-    	// resets the qry to 0.
-    	//qry.setLength(0);
-    	
-    	// getting primary key frm Customers just inserted 
-    	//qry.append("SELECT MAX( CustomerId ) FROM Customers");
-    	
-    	/* ResultSet rs = stmt.executeQuery(qry.toString());
-    	
-    	if(rs.next())
-    	{
-    		custId = rs.getString(1);
-    	}
-    	
-    	out.print("<b>Customer Id " + custId + "</b>"); */
-    	
-    	// inserting into users
-    	/* qry.setLength(0);
-    	
-    	qry.append("insert into users (userid,passwd,role,primaryKeyID)");
-    	qry.append(" values ('");
-    	qry.append(username);
-    	qry.append("','");
-    	qry.append(password);
-    	qry.append("',2,"); // setting the role to 2, which identifies a Customers
-    	qry.append(custId); // gets the CustomerId after insertion of the latest customer and stores it to users table.
-    	qry.append(")");
-    	
-    	int j = stmt.executeUpdate(qry.toString()); */
     	//------------------------------	
-    	//sessn.setAttribute("primaryID",custId); 
-    	//sessn.setAttribute("role",2);
     	// update session variable for user name
     	sessn.setAttribute("usr",firstname + " " + lastname);
     	response.sendRedirect("Home.jsp");
@@ -245,8 +215,7 @@ public  void  doUpdate(HttpServletRequest request,
        }
        catch(Exception e)
        {
-       	System.out.println(e);
-       	//e.printStackTrace();
+      	System.out.println(e);
        }
     }
     //--------------------------------
